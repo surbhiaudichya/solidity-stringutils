@@ -693,9 +693,9 @@ library strings {
     function join(slice memory self, slice[] memory parts) internal pure returns (string memory) {
         if (parts.length == 0)
             return "";
-
+         uint i;
         uint length = self._len * (parts.length - 1);
-        for(uint i = 0; i < parts.length; i++)
+        for(i = 0; i < parts.length; i++)
             length += parts[i]._len;
 
         string memory ret = new string(length);
